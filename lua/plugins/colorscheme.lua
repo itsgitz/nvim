@@ -11,5 +11,6 @@ return {
       highlights.LineNr.fg = "#669afa"
       highlights.CursorLineNr.fg = "#ffffff"
     end,
+    on_colors = function(colors) end,
   },
 }
