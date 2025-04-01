@@ -1,6 +1,6 @@
 return {
   "folke/noice.nvim",
-  event = "VeryLazy",
+  -- event = "VeryLazy",
   opts = {
     -- add any options here
     presets = {
@@ -13,7 +13,7 @@ return {
           event = "msg_show",
           min_length = 20,
         },
-        view = "mini",
+        view = "split",
       },
     },
   },
