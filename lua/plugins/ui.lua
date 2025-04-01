@@ -13,7 +13,7 @@ return {
           event = "msg_show",
           min_length = 20,
         },
-        view = "split",
+        view = "mini",
       },
     },
   },
