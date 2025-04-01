@@ -1,8 +1,5 @@
 return {
   {
-    "hrsh7th/cmp-nvim-lsp",
-  },
-  {
     "williamboman/mason.nvim",
     lazy = false,
     opts = function(_, opts)
@@ -29,6 +26,7 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
+    dependencies = { "hrsh7th/cmp-nvim-lsp" },
     lazy = false,
     config = function()
       local lspconfig = require("lspconfig")
