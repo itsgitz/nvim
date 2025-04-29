@@ -3,7 +3,7 @@
 -- Add any additional options here
 
 -- Disable mouse
-vim.opt.mouse = "a"
+vim.opt.mouse = ""
 vim.g.clipboard = {
   name = "win32yank-wsl",
   copy = {
