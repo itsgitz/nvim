@@ -18,7 +18,7 @@ vim.g.clipboard = {
 }
 
 -- Disable autoformat
-vim.g.autoformat = false
+-- vim.g.autoformat = false
 
 -- Disable relative line numbers
 vim.opt.rnu = false
