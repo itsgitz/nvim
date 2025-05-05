@@ -21,7 +21,7 @@ return {
           -- ... other format options
         },
         -- Memory and performance settings
-        tsserver_max_memory = 4096, -- MB (adjust based on your system)
+        tsserver_max_memory = 8192, -- MB (adjust based on your system)
         separate_diagnostic_server = true, -- Better perf for diagnostics
         publish_diagnostic_on = "insert_leave", -- Reduce diagnostic frequency
       },
