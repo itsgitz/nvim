@@ -9,6 +9,16 @@ return {
     },
   },
   {
+    -- Remove phpcs linter.
+    "mfussenegger/nvim-lint",
+    optional = true,
+    opts = {
+      linters_by_ft = {
+        php = {},
+      },
+    },
+  },
+  {
     -- Add a Treesitter parser for Laravel Blade to provide Blade syntax highlighting.
     "nvim-treesitter/nvim-treesitter",
     opts = function(_, opts)
@@ -35,5 +45,14 @@ return {
         filetype = "blade",
       }
     end,
+  },
+  {
+    -- Add the blade-nav.nvim plugin which provides Goto File capabilities
+    -- for Blade files.
+    "ricardoramirezr/blade-nav.nvim",
+    dependencies = {
+      "hrsh7th/nvim-cmp",
+    },
+    ft = { "blade", "php" },
   },
 }

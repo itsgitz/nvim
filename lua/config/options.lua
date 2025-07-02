@@ -25,3 +25,5 @@ vim.opt.rnu = false
 
 -- Disable lsp logger
 vim.lsp.set_log_level("off")
+
+vim.g.lazyvim_php_lsp = "intelephense"
