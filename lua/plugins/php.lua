@@ -8,7 +8,7 @@ return {
 
       conform.setup({
         formatters_by_ft = {
-          php = { "php" },
+          php = { "phpcbf" }, -- ✅ Use phpcbf
         },
         format_on_save = {
           lsp_fallback = true,
@@ -17,14 +17,9 @@ return {
         },
         notify_on_error = true,
         formatters = {
-          php = {
-            command = "php-cs-fixer",
-            args = {
-              "fix",
-              "$FILENAME",
-              "--config=/your/path/to/config/file/[filename].php",
-              "--allow-risky=yes", -- if you have risky stuff in config, if not you dont need it.
-            },
+          phpcbf = {
+            command = "phpcbf",
+            args = { "$FILENAME" },
             stdin = false,
           },
         },
@@ -42,7 +37,6 @@ return {
     },
   },
   {
-    -- Add a Treesitter parser for Laravel Blade to provide Blade syntax highlighting.
     "nvim-treesitter/nvim-treesitter",
     opts = function(_, opts)
       vim.list_extend(opts.ensure_installed, {
@@ -70,8 +64,6 @@ return {
     end,
   },
   {
-    -- Add the blade-nav.nvim plugin which provides Goto File capabilities
-    -- for Blade files.
     "ricardoramirezr/blade-nav.nvim",
     dependencies = {
       "hrsh7th/nvim-cmp",
