@@ -22,3 +22,5 @@
 --     vim.g.user_emmet_settings = {}
 --   end,
 -- }
+
+return {}
