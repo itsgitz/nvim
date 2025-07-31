@@ -10,6 +10,8 @@ return {
       hl.DiagnosticUnnecessary = {
         fg = c.dark5,
       }
+      hl.LineNr = { fg = "#7aa2f7" }
+      hl.CursorLineNr = { fg = "#e0af68", bold = true }
     end,
   },
 }
