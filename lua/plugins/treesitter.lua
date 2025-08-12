@@ -18,5 +18,7 @@ return {
     }
 
     opts.highlight = { enable = true }
+    opts.highlight.disable = opts.highlight.disable or {}
+    table.insert(opts.highlight.disable, "powershell")
   end,
 }
