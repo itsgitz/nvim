@@ -3,6 +3,6 @@
 -- Add any additional options here
 
 vim.env.CC = "zig cc"
-vim.opt.relativenumber = false
+vim.opt.relativenumber = true
 vim.opt.mouse = ""
 vim.g.lazyvim_php_lsp = "intelephense"
