@@ -9,12 +9,20 @@ return {
       "lua",
       "typescript",
       "javascript",
+      "astro",
       "json",
       "yaml",
       "php",
       "go",
       "html",
       "python",
+      "blade",
+      "vue",
+      "css",
+      "c",
+      "bash",
+      "graphql",
+      "json",
     }
 
     opts.highlight = { enable = true }
