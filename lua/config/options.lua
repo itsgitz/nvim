@@ -6,3 +6,7 @@ vim.env.CC = "zig cc"
 vim.opt.relativenumber = true
 vim.opt.mouse = ""
 vim.g.lazyvim_php_lsp = "intelephense"
+
+-- Smarty indenting
+-- I use this plugin https://github.com/shadowwa/smarty.vim
+vim.smarty_indent_block = 1
