@@ -20,6 +20,7 @@ return {
       "vue",
       "css",
       "c",
+      "cpp",
       "bash",
       "graphql",
       "json",
