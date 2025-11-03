@@ -1,6 +1,5 @@
 {
   "extras": [
-    "lazyvim.plugins.extras.ai.copilot",
     "lazyvim.plugins.extras.editor.outline",
     "lazyvim.plugins.extras.formatting.prettier",
     "lazyvim.plugins.extras.lang.ansible",
