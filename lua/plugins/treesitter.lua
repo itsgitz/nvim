@@ -24,6 +24,7 @@ return {
       "bash",
       "graphql",
       "json",
+      "zig",
     }
 
     opts.highlight = { enable = true }
