@@ -26,6 +26,7 @@ return {
       "json",
       "zig",
       "rust",
+      "ron",
     }
 
     opts.highlight = { enable = true }
