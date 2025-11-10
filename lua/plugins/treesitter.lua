@@ -25,6 +25,7 @@ return {
       "graphql",
       "json",
       "zig",
+      "rust",
     }
 
     opts.highlight = { enable = true }
