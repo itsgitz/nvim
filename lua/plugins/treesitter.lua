@@ -9,6 +9,7 @@ return {
       "lua",
       "typescript",
       "javascript",
+      "tsx",
       "astro",
       "json",
       "yaml",
