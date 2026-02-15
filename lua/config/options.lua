@@ -6,6 +6,7 @@
 vim.opt.relativenumber = true
 vim.opt.mouse = ""
 vim.g.lazyvim_php_lsp = "intelephense"
+vim.g.lazyvim_python_lsp = "pyright"
 
 -- Smarty indenting
 -- I use this plugin https://github.com/shadowwa/smarty.vim
