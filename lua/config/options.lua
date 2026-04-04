@@ -2,6 +2,10 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
+-- Enable loading of project-local .nvim.lua files (exrc)
+vim.opt.exrc = true
+vim.opt.secure = false -- ⚠️ ONLY safe in trusted projects
+
 -- vim.env.CC = "zig cc"
 vim.opt.relativenumber = true
 vim.opt.mouse = ""

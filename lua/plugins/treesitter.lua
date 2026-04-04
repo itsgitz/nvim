@@ -30,8 +30,24 @@ return {
       "ron",
     }
 
+    -- Disable treesitter highlighting for large files (monorepo-friendly)
     opts.highlight = { enable = true }
     opts.highlight.disable = opts.highlight.disable or {}
     table.insert(opts.highlight.disable, "powershell")
+
+    -- Reduce parser count for monorepo (remove slow/unused parsers)
+    opts.ensure_installed = {
+      "lua",
+      "typescript",
+      "javascript",
+      "tsx",
+      "json",
+      "yaml",
+      "html",
+      "bash",
+    }
+
+    -- Disable incremental parsing in large monorepos
+    opts.incremental_selection = { enable = false }
   end,
 }
