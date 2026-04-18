@@ -4,6 +4,9 @@ return {
     servers = {
       vtsls = {
         root_dir = function(fname)
+          if type(fname) == "number" then
+            fname = vim.api.nvim_buf_get_name(fname)
+          end
           local util = require("lspconfig.util")
           -- Prefer Nx project root (project.json) for monorepo scoping
           return util.root_pattern("project.json")(fname) or util.root_pattern("tsconfig.json")(fname)
