@@ -17,4 +17,4 @@ vim.g.lazyvim_python_lsp = "pyright"
 vim.smarty_indent_block = 1
 
 -- LSP server for Rust
--- vim.g.lazyvim_rust_diagnostics = "rust-analyzer"
+vim.g.lazyvim_rust_diagnostics = "rust-analyzer"
