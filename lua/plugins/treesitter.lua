@@ -28,6 +28,7 @@ return {
       "zig",
       "rust",
       "ron",
+      "prisma",
     }
 
     -- Disable treesitter highlighting for large files (monorepo-friendly)

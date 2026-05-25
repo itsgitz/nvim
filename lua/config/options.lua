@@ -18,3 +18,14 @@ vim.smarty_indent_block = 1
 
 -- LSP server for Rust
 vim.g.lazyvim_rust_diagnostics = "rust-analyzer"
+
+-- Disable didChangeWatchedFiles dynamic registration for all LSP servers
+vim.lsp.config("*", {
+  capabilities = {
+    workspace = {
+      didChangeWatchedFiles = {
+        dynamicRegistration = false,
+      },
+    },
+  },
+})

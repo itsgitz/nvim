@@ -1,14 +1,5 @@
 return {
   "neovim/nvim-lspconfig",
-  opts = function(_, opts)
-    -- Disable didChangeWatchedFiles dynamic registration to prevent redundant file watchers
-    opts.capabilities = opts.capabilities or {}
-    opts.capabilities.workspace = opts.capabilities.workspace or {}
-    opts.capabilities.workspace.didChangeWatchedFiles = opts.capabilities.workspace.didChangeWatchedFiles or {}
-    opts.capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = false
-
-    return opts
-  end,
   init = function()
     local lsp = vim.lsp
     local diagnostic = vim.diagnostic
