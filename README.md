@@ -3,6 +3,32 @@
 A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
 Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
 
+## Installation
+
+> [!WARNING]
+> This overwrites `~/.config/nvim`. If you have an existing Neovim config, back it up first:
+> ```sh
+> mv ~/.config/nvim ~/.config/nvim.bak
+> mv ~/.local/share/nvim ~/.local/share/nvim.bak
+> mv ~/.local/state/nvim ~/.local/state/nvim.bak
+> mv ~/.cache/nvim ~/.cache/nvim.bak
+> ```
+
+```sh
+git clone https://github.com/itsgitz/nvim ~/.config/nvim
+```
+
+Then install the [prerequisites](#prerequisites) below before first launch — otherwise
+plugin/LSP installation will fail partway through with missing-tool errors. Once those are
+in place, just start Neovim and let it bootstrap:
+
+```sh
+nvim
+```
+
+`lazy.nvim` installs itself and syncs all plugins on that first run; Mason then installs
+each language's LSP server the first time you open a file of that type.
+
 ## Prerequisites
 
 Mason (LazyVim's package manager) will auto-install most LSP servers, but it downloads
