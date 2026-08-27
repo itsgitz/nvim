@@ -64,3 +64,8 @@ each maps to a real LSP/formatter entry, so skipping one for a language you don'
   (`prefer_git = false`), so they don't require a C compiler. `ensure_installed` covers
   `lua, typescript, javascript, tsx, astro, json, yaml, php, go, html, python, blade, vue,
   css, c, cpp, bash, graphql, zig, rust, ron, prisma, svelte`.
+- Clipboard on a remote/SSH box: `lua/config/options.lua` sets `vim.g.clipboard` to use
+  **OSC 52** instead of `xclip`/`xsel` (which need a local X/Wayland display this box
+  doesn't have). Yanks tunnel through the terminal's escape codes back to your *local*
+  clipboard — this needs an OSC-52-capable terminal (kitty, WezTerm, iTerm2, Windows
+  Terminal, tmux with `set -g allow-passthrough on`, ...). No package to install.

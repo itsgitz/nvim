@@ -19,6 +19,22 @@ vim.smarty_indent_block = 1
 -- LSP server for Rust
 vim.g.lazyvim_rust_diagnostics = "rust-analyzer"
 
+-- SSH box: no local X/Wayland display for xclip/xsel to reach, so use OSC 52
+-- instead — it tunnels yanks through the terminal's escape codes back to
+-- your *local* machine's clipboard. Requires an OSC-52-capable terminal
+-- (kitty, WezTerm, iTerm2, Windows Terminal, tmux with allow-passthrough...).
+vim.g.clipboard = {
+  name = "OSC 52",
+  copy = {
+    ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+    ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+  },
+  paste = {
+    ["+"] = require("vim.ui.clipboard.osc52").paste("+"),
+    ["*"] = require("vim.ui.clipboard.osc52").paste("*"),
+  },
+}
+
 -- Disable didChangeWatchedFiles dynamic registration for all LSP servers
 vim.lsp.config("*", {
   capabilities = {
