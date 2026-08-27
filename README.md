@@ -10,6 +10,17 @@ and runs prebuilt binaries — it does **not** provide the underlying language r
 compilers. Missing tools show up as cryptic LSP/Mason errors on a fresh machine, so install
 these first.
 
+On Debian/Ubuntu, [`scripts/install-prereqs.sh`](scripts/install-prereqs.sh) automates the
+apt-installable pieces (build tools, ripgrep, fd, PHP, Composer, Zig) and reports the status
+of the rest (Node.js, Go, Rust, Python, lazygit — install these with whatever version
+manager you prefer). It's safe to re-run:
+
+```sh
+./scripts/install-prereqs.sh
+```
+
+On any other OS, follow the manual table below.
+
 ### Core (required regardless of language)
 
 | Tool | Why |
@@ -35,7 +46,7 @@ each maps to a real LSP/formatter entry, so skipping one for a language you don'
 | TypeScript / JavaScript | [`vtsls.lua`](lua/plugins/vtsls.lua) | `vtsls` (auto-installed by Mason) | Node.js + `npm` (see Core). |
 | Prisma | [`prisma.lua`](lua/plugins/prisma.lua) | `prismals` (auto-installed by Mason) | Node.js + `npm` (see Core). |
 | Zig | [`zig.lua`](lua/plugins/zig.lua) | `zls` (auto-installed by Mason) | The [Zig toolchain](https://ziglang.org/download/) on your `PATH` so `zls` can resolve the standard library. |
-| PHP / Laravel | [`php.lua`](lua/plugins/php.lua), [`lang-extras.lua`](lua/plugins/lang-extras.lua) | `intelephense` (auto-installed by Mason, via `lazyvim.plugins.extras.lang.php`) + formatting: [Pint](https://laravel.com/docs/pint) → falls back to `php-cs-fixer` | PHP CLI + [Composer](https://getcomposer.org/). Pint comes from the project's `vendor/bin/pint` (run `composer require laravel/pint --dev`); if it's absent, install `php-cs-fixer` globally (e.g. `composer global require friendsofphp/php-cs-fixer`) as the fallback. `intelephense` itself needs Node.js to run. |
+| PHP / Laravel | [`php.lua`](lua/plugins/php.lua), [`lang-extras.lua`](lua/plugins/lang-extras.lua) | `intelephense` (auto-installed by Mason, via `lazyvim.plugins.extras.lang.php`) + formatting: [Pint](https://laravel.com/docs/pint) → falls back to `php-cs-fixer` | PHP CLI + [Composer](https://getcomposer.org/). On Debian/Ubuntu, prefer the [`ondrej/php`](https://launchpad.net/~ondrej/+archive/ubuntu/php) PPA over the distro repo — it packages multiple PHP versions side by side (`php8.1`, `php8.3`, ...) switchable via `update-alternatives`, which the stock repo can't do (`scripts/install-prereqs.sh` uses it). Pint comes from the project's `vendor/bin/pint` (run `composer require laravel/pint --dev`); if it's absent, install `php-cs-fixer` globally (e.g. `composer global require friendsofphp/php-cs-fixer`) as the fallback. `intelephense` itself needs Node.js to run. |
 | Smarty | [`smarty.lua`](lua/plugins/smarty.lua) | Syntax/indent only ([`smarty.vim`](https://github.com/shadowwa/smarty.vim)) | Nothing extra — pure Vimscript plugin, no external binary. |
 | HTML/CSS (Emmet) | [`emmet.lua`](lua/plugins/emmet.lua) | [`emmet-vim`](https://github.com/mattn/emmet-vim) | Nothing extra — pure Vimscript plugin, no external binary. |
 | Rust | [`lang-extras.lua`](lua/plugins/lang-extras.lua) | `rust-analyzer` (auto-installed by Mason, via `lazyvim.plugins.extras.lang.rust`) | The [Rust toolchain](https://rustup.rs/) (`cargo`, `rustc`) on your `PATH` — `rust-analyzer` needs it to build and analyze your project. |
