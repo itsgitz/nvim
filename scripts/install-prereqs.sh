@@ -115,6 +115,7 @@ report "Node.js" node "--version" "https://nodejs.org/ (or fnm/nvm/volta)"
 report "Go" go "version" "https://go.dev/dl/"
 report "Rust" rustc "--version" "https://rustup.rs/"
 report "Python" python3 "--version" "https://www.python.org/downloads/"
+report "Dart" dart "--version" "https://dart.dev/get-dart"
 report "lazygit" lazygit "--version" "https://github.com/jesseduffield/lazygit#installation"
 
 log "Done. Now open Neovim and let Mason install the LSP servers:"

@@ -38,7 +38,7 @@ these first.
 
 On Debian/Ubuntu, [`scripts/install-prereqs.sh`](scripts/install-prereqs.sh) automates the
 apt-installable pieces (build tools, ripgrep, fd, PHP, Composer, Zig) and reports the status
-of the rest (Node.js, Go, Rust, Python, lazygit — install these with whatever version
+of the rest (Node.js, Go, Rust, Python, Dart, lazygit — install these with whatever version
 manager you prefer). It's safe to re-run:
 
 ```sh
@@ -79,6 +79,7 @@ each maps to a real LSP/formatter entry, so skipping one for a language you don'
 | Python | [`lang-extras.lua`](lua/plugins/lang-extras.lua) | `pyright` + `ruff` (auto-installed by Mason, via `lazyvim.plugins.extras.lang.python`) | Python 3 on your `PATH`. A per-project virtualenv is picked up automatically if present. |
 | Go | [`lang-extras.lua`](lua/plugins/lang-extras.lua) | `gopls` (auto-installed by Mason, via `lazyvim.plugins.extras.lang.go`) | The [Go toolchain](https://go.dev/dl/) on your `PATH` — `gopls` shells out to it for builds/`go.mod` resolution. |
 | Svelte | [`lang-extras.lua`](lua/plugins/lang-extras.lua) | `svelte-language-server` (auto-installed by Mason, via `lazyvim.plugins.extras.lang.svelte`, which pulls in the TypeScript extra too) | Node.js + `npm` (see Core). |
+| Dart / Flutter | [`lang-extras.lua`](lua/plugins/lang-extras.lua) | `dartls` (ships with the SDK, via `lazyvim.plugins.extras.lang.dart` — Mason cannot install it) + formatting: `dart_format` (also from the SDK) | The [Dart SDK](https://dart.dev/get-dart) (`dart` executable) on your `PATH` — the analysis server and formatter both come from it. [Flutter](https://docs.flutter.dev/get-started/install)'s bundled Dart SDK works too. |
 
 ### Notes
 
@@ -89,7 +90,7 @@ each maps to a real LSP/formatter entry, so skipping one for a language you don'
 - Treesitter parsers (`lua/plugins/treesitter.lua`) are downloaded as precompiled binaries
   (`prefer_git = false`), so they don't require a C compiler. `ensure_installed` covers
   `lua, typescript, javascript, tsx, astro, json, yaml, php, go, html, python, blade, vue,
-  css, c, cpp, bash, graphql, zig, rust, ron, prisma, svelte`.
+  css, c, cpp, bash, graphql, zig, rust, ron, prisma, svelte, dart`.
 - Clipboard on a remote/SSH box: `lua/config/options.lua` sets `vim.g.clipboard` to use
   **OSC 52** instead of `xclip`/`xsel` (which need a local X/Wayland display this box
   doesn't have). Yanks tunnel through the terminal's escape codes back to your *local*

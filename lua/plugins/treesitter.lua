@@ -28,6 +28,7 @@ return {
       "ron",
       "prisma",
       "svelte",
+      "dart",
     }
 
     -- Disable treesitter highlighting for large files (monorepo-friendly)
